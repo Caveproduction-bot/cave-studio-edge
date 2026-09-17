@@ -46,32 +46,3 @@ Questions and problems: [open an issue](https://github.com/Caveproduction-bot/ca
 
 CORSAIR, iCUE and XENEON are trademarks of their respective owners. Tom's Cave is not
 affiliated with or endorsed by Corsair.
-
----
-
-## Development
-
-```powershell
-npm test                   # unit and structure tests
-npm run check              # syntax, iCUE-parser-safe syntax, references, icuewidget validate
-npm run preview            # http://127.0.0.1:4174/CaveStudioEdge/  (add ?mock=1 for sample data)
-npm run capture            # dist/screens/mock.png at exactly 2560x720 ("live" for real data)
-npm run package            # dist/CaveStudioEdge.icuewidget for importing into iCUE
-npm run marketplace:media  # the eight 1920x960 store images, from the widget in mock mode
-npm run release            # verified submission bundle in release/<version>/
-```
-
-```
-CaveStudioEdge/scripts/
-  views/      presentation only (no fetch, storage or iCUE calls, enforced by a test)
-  models/     tasks, task memory, work session, breaks, history, preferences
-  services/   the only code that reaches Windows: bridge client, audio, media, telemetry,
-              iCUE media and sensor plugins, notifications, desktop, iCUE screen actions,
-              links, and the labelled dev mock
-  core/       storage, formatting, theme engine with WCAG contrast checks, the iCUE
-              style properties and hardware source detection
-bridge/       C# companion on 127.0.0.1:47140, plus its installer
-```
-
-Bridge: build with the .NET 8 SDK. `bridge\CaveStudioEdgeBridge.Setup` publishes
-`CaveStudioEdgeBridge-Setup.exe`, which embeds the published bridge.
