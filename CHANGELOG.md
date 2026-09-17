@@ -1,5 +1,55 @@
 # Changelog
 
+## 1.1.0 — colours and hardware sources move into iCUE
+
+Answers the two points raised in the Elgato Marketplace review of 1.0.0.
+
+### Colours are set in iCUE
+
+- The five colour themes and free accent, text and background colour pickers, plus
+  widget transparency, are now declared as iCUE widget properties and appear under
+  **Widgets → Cave Studio Edge** in iCUE. **Theme Preset** chooses between the five
+  palettes and **Custom colours**; on Custom the pickers apply, and because they use
+  iCUE's standard colour property names, **Pages Personalization** and **Theme per
+  Page** drive the dashboard too.
+- Changes made in iCUE apply to the dashboard immediately, and are remembered across
+  reloads and iCUE restarts.
+- Any colour a user can pick is still run through the WCAG contrast checks and
+  corrected before it is applied, so no combination makes the dashboard unreadable.
+- The colour swatches have been removed from the dashboard's own Options, which now
+  says where the colours live. Nothing else in Options changed.
+
+### CPU, GPU, RAM and network readings
+
+- CPU and GPU now work as soon as the widget is added, with no bridge and nothing else
+  installed, by reading iCUE's own Sensors plugin. In 1.0.0 every reading came from the
+  companion bridge, which is a separate download, so all four readings were blank for
+  anyone who had not installed it.
+- Where the bridge is running it is used first, because it measures CPU, GPU and RAM
+  the way Windows itself does, so all four readings agree with each other and with Task
+  Manager. iCUE's GPU sensor reads the card's own counter, which runs roughly double
+  Windows' figure for the same card at the same moment. A sensor chosen by hand in iCUE
+  still beats both, for that reading only.
+- Sources are detected from the sensor's reported type and kind, never from a sensor
+  id, device name or vendor, so detection is the same on Intel and AMD processors and
+  on NVIDIA, AMD and Intel graphics. On a PC with more than one GPU, Automatic reads
+  every card and shows the busiest, so an idle onboard chip cannot hide the card doing
+  the work; the cards are also labelled so they can be told apart when choosing by hand.
+- Every reading has a source setting in iCUE (**System Readings**) that starts on
+  **Automatic**. A manual choice applies to that reading alone; the others stay
+  automatic. A chosen sensor that no longer exists returns to Automatic by itself.
+- Sources are worked out again when a sensor appears or disappears and when iCUE
+  restarts, without reinstalling or reloading the dashboard.
+- The network reading picks a connected Ethernet or Wi-Fi adapter that is carrying
+  traffic and skips virtual, VPN, tunnel, loopback and disconnected adapters. The
+  adapter can also be chosen by hand in Options.
+- A reading with no source shows **N/A** with a one-line note naming the setting that
+  fixes it, in the same space as the graph, so no part of the dashboard is left blank
+  and unexplained. Missing readings never draw an invented value.
+- Options gained a read-only **System readings** line naming the source behind each
+  figure, so it is obvious which sensor Automatic found and whether a setting changed
+  anything.
+
 ## 1.0.0 — first release
 
 First release of Cave Studio Edge on Elgato Marketplace.

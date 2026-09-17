@@ -11,9 +11,10 @@ Get it from **Elgato Marketplace**, then install the free bridge below.
 **[CaveStudioEdgeBridge-Setup.exe](https://github.com/Caveproduction-bot/cave-studio-edge/releases/latest)**
 from the Releases page.
 
-The bridge is a small Windows program that powers audio controls, media details, system
-stats, the notification count and the screen buttons. It starts with Windows, talks only
-to your own PC, and sends nothing to the internet.
+The bridge is a small Windows program that powers audio controls, media details, the RAM
+and network readings, the notification count and the screen buttons. It starts with
+Windows, talks only to your own PC, and sends nothing to the internet. Tasks, work
+sessions, the clock, colours and the CPU and GPU readings all work without it.
 
 Full setup steps: **[SETUP.md](SETUP.md)**
 
@@ -24,11 +25,14 @@ Full setup steps: **[SETUP.md](SETUP.md)**
 - **Work sessions:** start a timer from any task, with a flash when time is up, breaks,
   End Session and history
 - **Media:** artwork, progress, transport, volume, and switching between media apps
-- **System:** live CPU, GPU, RAM and network
+- **System:** live CPU and GPU from iCUE's own sensors, plus RAM and network from the
+  bridge, each with a source you can set in iCUE
 - **Quick controls:** mute, mic, Switch Sound, Sound Source, Movie Mode, Show desktop,
   display-mode switching, and swiping between iCUE pages using your iCUE Screen Setup
   shortcuts
-- **Options:** five colour themes, 12 or 24-hour clock, Movie Mode brightness, and
+- **Colours:** five themes or your own accent, text and background colours and
+  transparency, set in iCUE's Widgets settings and Pages Personalization
+- **Options:** 12 or 24-hour clock, Movie Mode brightness, network adapter, and
   Reset all data
 
 ## Support
@@ -62,8 +66,10 @@ CaveStudioEdge/scripts/
   views/      presentation only (no fetch, storage or iCUE calls, enforced by a test)
   models/     tasks, task memory, work session, breaks, history, preferences
   services/   the only code that reaches Windows: bridge client, audio, media, telemetry,
-              notifications, desktop, iCUE screen actions, links, and the labelled dev mock
-  core/       storage, formatting, theme engine with WCAG contrast checks
+              iCUE media and sensor plugins, notifications, desktop, iCUE screen actions,
+              links, and the labelled dev mock
+  core/       storage, formatting, theme engine with WCAG contrast checks, the iCUE
+              style properties and hardware source detection
 bridge/       C# companion on 127.0.0.1:47140, plus its installer
 ```
 
