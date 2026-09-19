@@ -17,20 +17,28 @@ away, with nothing else installed.
 Cave Studio Edge is coloured from iCUE, in the same place as every other widget.
 
 1. In iCUE, open your **XENEON EDGE**, go to **Widgets** and select **Cave Studio Edge**.
-2. Under **Cave Studio Edge Personalization**, set **Theme Preset** to Blue, Green,
-   Yellow, Orange or Red.
-3. To use your own colours instead, set **Theme Preset** to **Custom colours**. The
-   dashboard then follows **Accent Color**, **Text Color** and **Background**, and the
-   colours you set in **Pages Personalization** (including **Theme per Page**).
-4. **Widget Transparency** always applies.
+2. Under **Cave Studio Edge Personalization**, pick any **Accent Color**. The rest of the
+   dashboard is tuned to match it.
+3. For a completely different look, change **Text Color** and **Background Color** too.
+4. **Background Transparency** fades the dashboard's background and panels, so the iCUE
+   page (its Device Background colour or image) shows through, while text, numbers and
+   buttons stay at full strength. It starts at 100%. On a black page background the
+   change is subtle, because the dashboard is dark too.
 
-The dashboard changes as you pick. On one of the five presets the colour pickers are
-ignored on purpose, so a page's own colours cannot quietly replace the theme you chose.
+These are the only colour settings Cave Studio Edge uses. iCUE's **Pages Personalization**
+(Theme per Page, Widget Text Color, Widget Accent Color, Widget Background, Widget
+Transparency) does not change it, on purpose: those settings are what dimmed the
+dashboard on a new page and hid its own colour choices.
+
+The dashboard changes as you pick. To go back to the original look, set the colours to
+accent **#5D9DD3**, text **#F3F6FA** and background **#070B10** (also listed in the
+dashboard's **Options**). For the other ready-made looks, use one of these accents:
+green **#5FB58C**, yellow **#D6B45A**, orange **#D98F5A**, red **#D4706B**.
 
 Whatever you choose is checked for readability and nudged if a combination would be
 hard to read, so the dashboard never ends up unreadable.
 
-## 3. Where the CPU, GPU and RAM readings come from
+## 3. Where the CPU, GPU, RAM and network readings come from
 
 These are found for you and need no setup. **Options → System readings** always names
 the source behind each figure, so you can see what was found. If you would rather
@@ -44,10 +52,13 @@ Readings**:
   says "only used when Manual".
 - Only the reading you change is affected; the rest stay automatic.
 - If a sensor you picked is no longer there, that reading goes back to Automatic.
+- **Network Source**: **Automatic** measures whichever connection is carrying traffic.
+  Choose **Ethernet** or **Wi-Fi** to measure that one. The network box is labelled
+  ETHERNET or WI-FI so you can see which is being measured.
 
 iCUE has no sensor for system RAM on most PCs, and none at all for network speed, so
 those two come from the bridge in the next step. A reading with no source shows **N/A**
-and a short note saying where to set it.
+and a short note saying why and where to fix it.
 
 ## 4. Install the free Cave Studio Edge Bridge
 
@@ -56,14 +67,14 @@ The bridge is a small program that lets the dashboard reach Windows. It powers:
 - volume, mute, microphone mute and switching sound output
 - album artwork, the progress bar and switching between media apps
 - the RAM and network readings
-- the Windows notification count
+- the Windows notification count, and opening and closing the notification centre
 - Show desktop, the display-mode button, swiping between pages, and Open iCUE
 
 Without it, those parts of the dashboard say so. Tasks, work sessions, the clock,
 colours and the CPU and GPU readings do not need it.
 
 1. Download **CaveStudioEdgeBridge-Setup.exe** from
-   <https://github.com/Caveproduction-bot/cave-studio-edge/releases>.
+   <https://github.com/Caveproduction-bot/cave-studio-edge/releases/latest>.
 2. Double-click it. If Windows shows "Windows protected your PC", click **More info**,
    then **Run anyway**. The installer is not code-signed, which is why Windows asks.
 3. After a few seconds a message says the bridge is installed and running.
@@ -91,11 +102,15 @@ uses them. If a shortcut isn't set, the dashboard tells you when you try to use 
 - **Tasks:** tap **ADD TASK**. Start typing a title and past tasks are suggested. Tap
   the date for a calendar. Pick a duration or type one, such as "45 min" or "2h".
 - **Work sessions:** tap ▶ on a task to start its timer. Tap **END SESSION** when you're
-  done; the session is saved and the task is ticked off.
+  done; the session is saved and the task is ticked off. If a session is already running
+  and you start a different task, the dashboard asks you to end and log that one first.
+- **SESSIONS** lists your logged sessions with the time worked. **CONTINUE** picks one
+  back up where it left off; the session running now is shown at the top.
+- **Calendar:** tap a day to see its tasks; tap the same day again to add a task on it.
 - **Switch Sound** moves to your next sound output. **Sound Source** lets you pick one.
 - **Movie Mode** dims the whole dashboard. Tap anywhere to bring it back.
-- **Options** has the clock format, Movie Mode brightness, which network adapter the
-  network reading measures, Open iCUE and Reset all data. Colours are in iCUE (step 2).
+- **Options** has the clock format, Movie Mode brightness, Open iCUE and Reset all data.
+  Colours and reading sources are in iCUE (steps 2 and 3).
 
 ## Troubleshooting
 
@@ -106,8 +121,8 @@ again.
 **A reading shows "N/A".**
 Nothing on this PC reports it. For CPU, GPU or RAM, set a source in iCUE under
 **Widgets → Cave Studio Edge → System Readings** (step 3). For the network reading,
-install the bridge (step 4) and, if you have several connections, pick the adapter in
-**Options → Network adapter**.
+install the bridge (step 4). If the note says a connection isn't connected, set
+**Network Source** back to Automatic, or to the connection you use (step 3).
 
 **Swiping moves the dashboard but the page doesn't change.**
 Set Previous Display Screen and Next Display Screen in iCUE Screen Setup (step 5).
@@ -118,7 +133,7 @@ different apps (for example Spotify and a browser) can be switched between.
 
 **The notification bell has no number.**
 Some Windows setups don't allow apps to read the notification count. The bell still
-opens your notifications.
+opens your notifications, and tapping it again closes them.
 
 ## Removing the bridge
 

@@ -2,7 +2,39 @@
 
 ## 1.1.0 — colours and hardware sources move into iCUE
 
-Answers the two points raised in the Elgato Marketplace review of 1.0.0.
+Answers the two points raised in the Elgato Marketplace review of 1.0.0, and the three
+raised when 1.1.0 was first reviewed:
+
+- **Colours only, no switches.** The colour settings no longer use iCUE's standard names,
+  which made iCUE add its own Custom Style switch that hid the pickers, and the Theme
+  Preset dropdown is gone too: iCUE shows Accent, Text and Background Color and
+  Background Transparency, and every change shows straight away. Any accent is laid on
+  the tuned dark background (the old presets were exactly that), until text or
+  background is changed too. Options lists the original colours. The per-page theme
+  (Pages Personalization) no longer drives the dashboard as a result.
+- **Not dimmed on install.** iCUE fed a new page's 80% Widget Transparency into the old
+  `transparency` setting. The new Background Transparency starts at 100% and fades only
+  the background; panels, text and controls stay at full strength.
+- **Network in iCUE.** System Readings has Network Source: Automatic, Ethernet or
+  Wi-Fi. (A live list of adapters was tried first and crashed iCUE.)
+- The notifications button opens the Windows notification centre and, pressed again,
+  closes it (bridge 1.1.1).
+- Deleting a task asks for confirmation first; Undo still follows.
+- The dashboard fills the full width of the screen instead of leaving bands at the sides.
+- Options no longer has a network adapter picker: Network Source in iCUE covers it.
+- Starting a different task while a session has time on it (or choosing another task
+  with CHANGE) no longer switches silently: "Already working on a task" offers KEEP
+  WORKING or END SESSION.
+- Work sessions: each logged session has CONTINUE, which puts it back on the timer; the
+  session running now is listed first as Active now with END SESSION; rows show TOTAL
+  (time worked) and BREAKS; deleting a session asks in a pop-up; HOURS WORKED matches
+  the figure under the task list; the task picker separates upcoming and completed tasks.
+- Calendar: a tap on a day lists its tasks and keeps the calendar open; a second tap
+  on that day adds a task on it. SHOW TODAY / SHOW ALL switches the task list.
+- Larger text in task rows and in every pop-up.
+
+The notes below describe 1.1.0 as first submitted; where they mention Pages
+Personalization, the points above replace them.
 
 ### Colours are set in iCUE
 

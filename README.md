@@ -26,13 +26,13 @@ Full setup steps: **[SETUP.md](SETUP.md)**
   End Session and history
 - **Media:** artwork, progress, transport, volume, and switching between media apps
 - **System:** live CPU and GPU from iCUE's own sensors, plus RAM and network from the
-  bridge, each with a source you can set in iCUE
+  bridge, each with a source you can set in iCUE (network: Automatic, Ethernet or Wi-Fi)
 - **Quick controls:** mute, mic, Switch Sound, Sound Source, Movie Mode, Show desktop,
   display-mode switching, and swiping between iCUE pages using your iCUE Screen Setup
   shortcuts
-- **Colours:** five themes or your own accent, text and background colours and
-  transparency, set in iCUE's Widgets settings and Pages Personalization
-- **Options:** 12 or 24-hour clock, Movie Mode brightness, network adapter, and
+- **Colours:** any accent, text and background colour, plus background transparency,
+  set in iCUE's Widgets settings
+- **Options:** 12 or 24-hour clock, Movie Mode brightness, and
   Reset all data
 
 ## Support
